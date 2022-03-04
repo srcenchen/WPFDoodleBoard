@@ -29,16 +29,7 @@ namespace WPFDoodleBoard
 
         private void UpdateUI()
         {
-            if (doodle.canDraw)
-            {
-                buttonModeDraw.IsEnabled = false;
-                buttonModeSelect.IsEnabled = true;
-            }
-            else
-            {
-                buttonModeDraw.IsEnabled = true;
-                buttonModeSelect.IsEnabled = false;
-            }
+            doodle.SetDrawColor(Doodle.DoodleEnum.DoodleEnumColor.red);
         }
 
         private void buttonDraw_Click(object sender, RoutedEventArgs e)
@@ -111,27 +102,17 @@ namespace WPFDoodleBoard
 
         private void buttonOrange_Click(object sender, RoutedEventArgs e)
         {
-            doodle.SetDrawColor(Doodle.DoodleEnum.DoodleEnumColor.orange);
-        }
-
-        private void buttonBrush1_Click(object sender, RoutedEventArgs e)
-        {
-            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.small);
-        }
-
-        private void buttonBrush2_Click(object sender, RoutedEventArgs e)
-        {
-            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.middle);
+            doodle.SetDrawColor(Doodle.DoodleEnum.DoodleEnumColor.purple);
         }
 
         private void buttonBrush3_Click(object sender, RoutedEventArgs e)
         {
-            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.big);
+            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.middle);
         }
 
         private void buttonBrush4_Click(object sender, RoutedEventArgs e)
         {
-            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.bigger);
+            doodle.SetDrawWidth(Doodle.DoodleEnum.DoodleEnumBrushType.big);
         }
 
 
@@ -147,5 +128,38 @@ namespace WPFDoodleBoard
             doodle.SetCanSelect();
             UpdateUI();
         }
-    }
+
+		private void doodle_Loaded_1(object sender, RoutedEventArgs e)
+		{
+            this.WindowState = System.Windows.WindowState.Normal;//还原窗口（非最小化和最大化）
+            this.WindowStyle = System.Windows.WindowStyle.None; //仅工作区可见，不显示标题栏和边框
+            this.ResizeMode = System.Windows.ResizeMode.NoResize;//不显示最大化和最小化按钮
+            this.Topmost = true;    //窗口在最前
+
+            this.Left = 0.0;
+            this.Top = 0.0;
+            this.Width = System.Windows.SystemParameters.PrimaryScreenWidth;
+            this.Height = System.Windows.SystemParameters.PrimaryScreenHeight;
+        }
+
+		private void buttonExit_Click(object sender, RoutedEventArgs e)
+		{
+            Start start = new Start();
+            start.Show();
+            this.Close();
+        }
+
+		private void buttonClearAll_Click(object sender, RoutedEventArgs e)
+		{
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+
+        }
+
+		private void buttonPurple_Click(object sender, RoutedEventArgs e)
+		{
+            doodle.SetDrawColor(Doodle.DoodleEnum.DoodleEnumColor.purple);
+        }
+	}
 }

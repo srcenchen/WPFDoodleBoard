@@ -27,7 +27,7 @@ namespace WPFDoodleBoard.Doodle
             blue,
             red,
             green,
-            orange,
+            purple,
             white,
             yellow
         };
@@ -36,7 +36,7 @@ namespace WPFDoodleBoard.Doodle
         {
             small = 1,
             middle = 2,
-            big = 4,
+            big = 3,
             bigger = 8
         };
 

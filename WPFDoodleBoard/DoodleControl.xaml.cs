@@ -48,7 +48,7 @@ namespace WPFDoodleBoard
             doodleModels = new ArrayList();
 
             SetDrawType(DoodleEnumType.draw);
-            SetDrawColor(DoodleEnumColor.orange);
+            SetDrawColor(DoodleEnumColor.purple);
             SetDrawWidth(DoodleEnumBrushType.middle);
 
 
@@ -76,8 +76,8 @@ namespace WPFDoodleBoard
                 case DoodleEnumColor.green:
                     brushColor = Brushes.Green;
                     break;
-                case DoodleEnumColor.orange:
-                    brushColor = Brushes.Orange;
+                case DoodleEnumColor.purple:
+                    brushColor = Brushes.Purple;
                     break;
                 case DoodleEnumColor.red:
                     brushColor = Brushes.Red;
@@ -98,7 +98,7 @@ namespace WPFDoodleBoard
                     lineWidth = 2.0;
                     break;
                 case DoodleEnumBrushType.big:
-                    lineWidth = 4.0;
+                    lineWidth = 3.0;
                     break;
                 case DoodleEnumBrushType.bigger:
                     lineWidth = 8.0;
@@ -778,7 +778,7 @@ namespace WPFDoodleBoard
         /// <returns></returns>
         private double getEraserWidth()
         {
-            return 0.04 * doodleCanvas.ActualWidth;
+            return 0.015 * doodleCanvas.ActualWidth;
         }
 
         /// <summary>
@@ -800,8 +800,8 @@ namespace WPFDoodleBoard
                 case DoodleEnumColor.green:
                     result = Brushes.Green;
                     break;
-                case DoodleEnumColor.orange:
-                    result = Brushes.Orange;
+                case DoodleEnumColor.purple:
+                    result = Brushes.Purple;
                     break;
                 case DoodleEnumColor.red:
                     result = Brushes.Red;
@@ -835,8 +835,8 @@ namespace WPFDoodleBoard
                 case DoodleEnumColor.green:
                     result = Colors.Green;
                     break;
-                case DoodleEnumColor.orange:
-                    result = Colors.Orange;
+                case DoodleEnumColor.purple:
+                    result = Colors.Purple;
                     break;
                 case DoodleEnumColor.white:
                     result = Colors.White;
